@@ -1,25 +1,28 @@
 const neatCsv = require('neat-csv');
 const fs = require('fs');
-const csv = '../data/NAACL_SRW_2016.csv';
+const path = require('path');
 
-const readCsv = () => {
-	return fs.readFile(csv, async (err, data) => {
-		if (err) {
-			console.error(err);
-			return;
+const readCsv = async () => {
+	const data = await fs.readFileSync(
+		path.join(__dirname, '../data/NAACL_SRW_2016.csv'),
+		async (err, data) => {
+			if (err) {
+				console.error(err);
+				return;
+			}
+
+			return data;
 		}
+	);
 
-		const datas = await neatCsv(
-			data,
-			(options = {
-				mapHeaders: ({ index }) => {
-					return index === 0 ? 'TweetID' : 'Classification';
-				},
-			})
-		);
-
-		return datas;
-	});
+	return neatCsv(
+		data,
+		(options = {
+			mapHeaders: ({ index }) => {
+				return index === 0 ? 'TweetID' : 'Classification';
+			},
+		})
+	);
 };
 
 module.exports = readCsv;
