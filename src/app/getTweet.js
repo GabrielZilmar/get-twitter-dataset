@@ -1,8 +1,4 @@
-const twit = require('twit');
-const config = require('../config/config');
 const needle = require('needle');
-
-const Twitter = new twit(config);
 
 const getTweet = async (tweetId) => {
 	const id = parseInt(tweetId, 10);
