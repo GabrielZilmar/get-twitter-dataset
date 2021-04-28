@@ -1,0 +1,27 @@
+{
+  "name": "get-twitter-dataset",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "neat-csv": "^6.0.1",
+    "needle": "^2.6.0",
+    "twit": "^2.2.11"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GabrielZilmar/get-twitter-dataset.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GabrielZilmar/get-twitter-dataset/issues"
+  },
+  "homepage": "https://github.com/GabrielZilmar/get-twitter-dataset#readme"
+}
